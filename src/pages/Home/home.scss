@@ -1,0 +1,55 @@
+@import "../../style.scss";
+
+.home {
+  @include themify($themes) {
+    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    .pagination li button,
+    .pagination li div {
+      color: themed("textColor");
+    }
+  }
+  @include themify($themes) {
+    padding: 20px 70px;
+    background-color: themed("bgSoft");
+
+    @include mobile {
+      padding: 10px;
+    }
+
+    @include tablet {
+      padding: 20px;
+    }
+  }
+
+  .select-type-posts {
+    display: flex;
+
+    margin-bottom: 20px;
+    border-radius: 10px;
+    justify-content: space-around;
+    overflow: hidden;
+
+    @include themify($themes) {
+      -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+      -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+      box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+      border-radius: 20px;
+      background-color: themed("bg");
+      color: themed("textColor");
+    }
+
+    div {
+      flex: 1;
+      padding: 20px;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

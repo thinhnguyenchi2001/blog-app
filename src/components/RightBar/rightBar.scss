@@ -1,0 +1,114 @@
+@import "../../style.scss";
+
+.rightBar {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed("bgSoft");
+
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+
+      .item {
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        padding: 40px;
+        margin-bottom: 20px;
+        background-color: themed("bg");
+
+        .tag {
+          color: themed("textColor");
+          background-color: themed("bg");
+          margin-top: 6px;
+          padding: 10px 10px;
+          cursor: pointer;
+          border-radius: 4px;
+        }
+
+        span {
+          color: gray;
+        }
+
+        .user {
+          display: flex;
+          flex-wrap: wrap;
+          row-gap: 10px;
+          align-items: center;
+          justify-content: space-between;
+          margin: 20px 0px;
+          border-radius: 4px;
+
+          .userInfo {
+            display: flex;
+            align-items: center;
+            padding: 5px 20px 5px 10px;
+            position: relative;
+            cursor: pointer;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+
+            .online {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background-color: limegreen;
+              position: absolute;
+              bottom: 2px;
+              left: 35px;
+            }
+
+            p {
+              color: themed("textColorSoft");
+            }
+
+            span {
+              font-weight: 500;
+              color: themed("textColor");
+            }
+          }
+
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              border: none;
+              padding: 5px;
+              color: white;
+              cursor: pointer;
+
+              &:first-child {
+                background-color: #5271ff;
+              }
+
+              &:last-child {
+                background-color: #f0544f;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
